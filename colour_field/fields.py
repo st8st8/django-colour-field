@@ -1,8 +1,8 @@
 from django.db import models
-from forms import ColourPickerFormField
+from forms import ColourFormField
 import re
 
-class ColourPickerField(models.Field):
+class ColourField(models.Field):
     """
     Store a colour as a CSS value (ie, #012345)
     
@@ -21,9 +21,9 @@ class ColourPickerField(models.Field):
         return value
     
     def formfield(self, *args, **kwargs):
-        defaults = {'form_class': ColourPickerFormField}
+        defaults = {'form_class': ColourFormField}
         defaults.update(kwargs)
-        return super(ColourPickerField, self).formfield(*args, **defaults)
+        return super(ColourField, self).formfield(*args, **defaults)
     
     def db_type(self, connection):
         return 'char(7)'

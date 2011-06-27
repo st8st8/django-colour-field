@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 import re
 from widgets import ColourPickerWidget
 
-class ColourPickerFormField(forms.Field):
+class ColourFormField(forms.Field):
     default_error_messages = {
         'invalid':_(u'Enter a valid colour value: e.g. "#ff0022"'),
     }
