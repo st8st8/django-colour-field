@@ -11,10 +11,10 @@ class ColourFormField(forms.Field):
     def __init__(self, *args, **kwargs):
         defaults = {'widget':ColourPickerWidget}
         defaults.update(kwargs)
-        super(ColourPickerFormField, self).__init__(*args, **defaults)
+        super(ColourFormField, self).__init__(*args, **defaults)
     
     def clean(self, value):
-        super(ColourPickerFormField, self).clean(value)
+        super(ColourFormField, self).clean(value)
         if value == '' and not self.required:
             return u''
         
