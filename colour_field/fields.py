@@ -21,12 +21,13 @@ class ColourField(models.Field):
         return value
     
     def get_prep_value(self, value):
-        if not value.strip() and self.null:
+        if not (value and value.strip()) and self.null:
             return None
         return value
     
     def value_to_string(self, value):
-        return value.strip() or None
+        if value:
+            return value.strip() or None
         
     def formfield(self, *args, **kwargs):
         defaults = {'form_class': ColourFormField}
