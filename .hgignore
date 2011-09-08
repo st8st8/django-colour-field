@@ -1,0 +1,23 @@
+syntax: glob
+
+#IDE files
+.settings/*
+.project
+.pydevproject
+.cache/*
+
+#temp files
+*.pyc
+*.pyo
+*.orig
+*~
+
+#os files
+.DS_Store
+Thumbs.db
+
+#setup files
+build/
+dist/
+MANIFEST
+django_colour_field.egg-info/
