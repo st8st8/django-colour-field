@@ -1,0 +1,3 @@
+recursive-include colour_field/static *.css
+recursive-include colour_field/static *.js
+recursive-include colour_field/static *.png
