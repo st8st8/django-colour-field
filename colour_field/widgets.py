@@ -32,6 +32,6 @@ class ColourPickerWidget(forms.TextInput):
         }
 
         js = (
-            settings.STATIC_URL + 'colour_field/js/jquery-1.4.2.js',
+            settings.STATIC_URL + 'colour_field/js/jquery-1.9.1.min.js',
             settings.STATIC_URL + 'colour_field/js/farbtastic.js',
         )
