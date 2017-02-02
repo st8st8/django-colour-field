@@ -10,8 +10,9 @@ class ColourField(models.Field):
     it's AdminCharWidget or whatever, and we want to use our own.
     """
 
-    __metaclass__ = models.SubfieldBase
-    _south_introspects = True
+    # I think these can both go.
+    # __metaclass__ = models.SubfieldBase
+    # _south_introspects = True
 
     description = "A colour object"
 
