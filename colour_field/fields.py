@@ -16,11 +16,6 @@ class ColourField(models.Field):
 
     description = "A colour object"
 
-    def to_python(self, value):
-        # assert value[0] == "#"
-        # assert re.match('#[0-9a-fA-F]{6}', value)
-        return value
-
     def get_prep_value(self, value):
         if not (value and value.strip()) and self.null:
             return None
