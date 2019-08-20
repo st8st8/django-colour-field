@@ -1,5 +1,5 @@
 from django.db import models
-from forms import ColourFormField
+from .forms import ColourFormField
 
 
 class ColourField(models.Field):

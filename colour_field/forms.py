@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 import re
-from widgets import ColourPickerWidget
+from .widgets import ColourPickerWidget
 
 
 class ColourFormField(forms.Field):
