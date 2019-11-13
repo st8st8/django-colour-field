@@ -21,7 +21,7 @@ class ColourPickerWidget(forms.TextInput):
     """
 
     def render(self, name, value, attrs=None, renderer=None, **kwargs):
-        rendered = super(ColourPickerWidget, self).render(name, value, attrs)
+        rendered = super(ColourPickerWidget, self).render(name, value, attrs, renderer)
         return rendered + mark_safe(
             u"""<div id="colourpicker_%(name)s" class="colourpicker"></div>
             <script type="text/javascript">
@@ -58,7 +58,7 @@ class PikPikColourPickerWidget(forms.TextInput):
         super(PikPikColourPickerWidget, self).__init__(attrs, **kwargs)
         
     def render(self, name, value, attrs=None, renderer=None):
-        rendered = super(PikPikColourPickerWidget, self).render(name, value, attrs)
+        rendered = super(PikPikColourPickerWidget, self).render(name, value, attrs, renderer)
         rgb_list = [rgb(x) for x in self.defaults]
         rgbs = ", ".join([' {{"r": "{0}", "g": "{1}", "b": "{2}"}}'.format(x[0], x[1], x[2]) for x in rgb_list])
         return rendered + mark_safe(
