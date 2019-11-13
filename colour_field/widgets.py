@@ -52,12 +52,12 @@ class PikPikColourPickerWidget(forms.TextInput):
     
     defaults = ["ff0000", "00ff00", "0000ff"]
     
-    def __init__(self, defaults=None, attrs=None, renderer=None, **kwargs):
+    def __init__(self, defaults=None, attrs=None, **kwargs):
         if defaults:
             self.defaults = defaults
         super(PikPikColourPickerWidget, self).__init__(attrs, **kwargs)
         
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         rendered = super(PikPikColourPickerWidget, self).render(name, value, attrs)
         rgb_list = [rgb(x) for x in self.defaults]
         rgbs = ", ".join([' {{"r": "{0}", "g": "{1}", "b": "{2}"}}'.format(x[0], x[1], x[2]) for x in rgb_list])
