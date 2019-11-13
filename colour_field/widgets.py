@@ -20,7 +20,7 @@ class ColourPickerWidget(forms.TextInput):
     Widget to display a Colour Picker with js.
     """
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None, **kwargs):
         rendered = super(ColourPickerWidget, self).render(name, value, attrs)
         return rendered + mark_safe(
             u"""<div id="colourpicker_%(name)s" class="colourpicker"></div>
@@ -52,7 +52,7 @@ class PikPikColourPickerWidget(forms.TextInput):
     
     defaults = ["ff0000", "00ff00", "0000ff"]
     
-    def __init__(self, defaults=None, attrs=None, **kwargs):
+    def __init__(self, defaults=None, attrs=None, renderer=None, **kwargs):
         if defaults:
             self.defaults = defaults
         super(PikPikColourPickerWidget, self).__init__(attrs, **kwargs)
